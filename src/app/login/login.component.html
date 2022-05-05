@@ -1,0 +1,12 @@
+<div class="login_page">
+  <div class="header-text">
+    <h1>Connexion</h1>
+    <form (ngSubmit)="onSubmit()">
+      <input type="text" name="username" id="username" [(ngModel)]="username" placeholder="Nom d'utilisateur">
+
+      <input type="password" name="password" id="" [(ngModel)]="password" placeholder="Mot de passe">
+
+      <button class="btn-button">Se connecter</button>
+    </form>
+  </div>
+</div>
