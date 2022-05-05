@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './shared/commun_components/layout/layout.component';
-import { PageListProductsComponent } from './products/pages/page-list-products/page-list-products.component';
-import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -12,10 +11,11 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      {path:'accueil', component: HomeComponent},
+      { path: 'accueil', component: HomeComponent },
 
       {
-        path: 'produits', component: PageListProductsComponent
+        path: 'produits',
+        loadChildren: () => import('./products/products.module').then(mod => mod.ProductsModule)
       }
     ]
   }

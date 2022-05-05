@@ -1,5 +1,5 @@
 export class Product {
-  public title: string = '';
+  public name: string = '';
   public description: string = '';
   public category: string = '';
   public price: string = '';

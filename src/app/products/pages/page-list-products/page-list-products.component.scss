@@ -1,3 +1,14 @@
 .example-card {
   margin-top: 12px;
 }
+
+.addBtn {
+  background: seagreen;
+  color: white;
+  float: right;
+}
+
+.addBtn:hover {
+  background: greenyellow;
+  color: black;
+}
