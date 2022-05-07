@@ -1,0 +1,4 @@
+<div class="container">
+  <app-form-product *ngIf="product$ | async as product" [init]="product" (data)="updateProduct($event)" [isPageEdit] = true>
+  </app-form-product>
+</div>

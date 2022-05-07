@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { PageListProductsComponent } from './pages/page-list-products/page-list-products.component';
 import { PageAddProductComponent } from './pages/page-add-product/page-add-product.component';
+import { PageEditProductComponent } from './pages/page-edit-product/page-edit-product.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
     path: 'add',
     component: PageAddProductComponent,
     //data: { title: 'prestations', subtitle: 'Ajouter une prestation' }
+  },
+  {
+    path: 'edit/:id',
+    component: PageEditProductComponent
   }
 ]
 

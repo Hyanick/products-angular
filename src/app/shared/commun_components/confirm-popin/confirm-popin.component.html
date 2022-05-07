@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Suppression du produit <b>{{productName}}</b></h2>
+<mat-dialog-content class="mat-typography">
+  <p>Souhaitez-vous réellement supprmier le produit <b>{{productName}}</b> ? Cette action est définitive.</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close>Annuler</button>
+  <button mat-raised-button color="warn" [mat-dialog-close]="true" cdkFocusInitial (click) ="onClick()">Valider</button>
+</mat-dialog-actions>

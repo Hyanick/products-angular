@@ -6,17 +6,44 @@
     </button>
   </div>
 </div>
-<mat-card *ngIf=" product.length === 0 " class="example-card">
+<mat-card *ngIf="product?.length === 0 " class="example-card">
 
   <mat-card-subtitle>Aucun produit disponible! </mat-card-subtitle>
 </mat-card>
-<div *ngFor="let p of product">
-  <mat-card *ngIf=" product.length > 0 && p.activated" class="example-card">
-    <mat-card-title>{{p.name}}</mat-card-title>
-    <mat-card-subtitle>{{p.category}}</mat-card-subtitle>
-    <mat-card-content>
-      <p>{{p.price}} €</p>
-      <p>{{p.description}}</p>
-    </mat-card-content>
-  </mat-card>
+<div *ngIf="product?.length > 0">
+  <div *ngFor="let p of product">
+    <div *ngIf="!isRouteProduct">
+      <mat-card *ngIf="p?.activated" class="example-card mat-elevation-z8">
+        <mat-card-title>{{p?.name}}</mat-card-title>
+        <mat-card-subtitle>{{p?.category}}</mat-card-subtitle>
+        <mat-card-content>
+          <p>{{p?.price}} €</p>
+          <p>{{p?.description}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div *ngIf="isRouteProduct">
+      <mat-card
+        [ngClass]="p?.activated ? 'example-card mat-elevation-z8 ': 'example-card mat-elevation-z8 productDesactived'">
+        <mat-card-title>{{p?.name}}</mat-card-title>
+        <mat-card-subtitle>{{p?.category}}</mat-card-subtitle>
+        <mat-card-content>
+          <p>{{p?.price}} €</p>
+          <p>{{p?.description}}</p>
+          <p>{{p?.activated}}</p>
+        </mat-card-content>
+        <mat-card-actions align="end">
+          <button mat-button class="editBtn" (click)="editProduct(p)">
+            <mat-icon>create</mat-icon>
+          </button>
+          <button mat-button class="deleteBtn" (click)="openPopin(p)">
+            <mat-icon>delete</mat-icon>
+
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
 </div>

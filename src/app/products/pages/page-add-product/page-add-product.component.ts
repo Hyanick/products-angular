@@ -22,7 +22,13 @@ export class PageAddProductComponent implements OnInit {
   public addProduct(product: Product) {
     this.productService.addProduct(product).subscribe({
       next: (data: any) => {
-        this.router.navigate(['../'], { relativeTo: this.aRoute })
+        this.router.navigate(['../'], { relativeTo: this.aRoute });
+        this.productService.getAllProducts().subscribe({
+          next: (data:any) => {
+
+          }
+        })
+
       }
     })
   }

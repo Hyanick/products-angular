@@ -14,7 +14,7 @@
 
     <div class="form-group">
       <label for="description" class="label">Description: </label>
-      <textarea id="description" class="form-control" cols="30" rows="10" formControlName="description"></textarea>
+      <textarea id="description" class="form-control" cols="30" rows="10" formControlName="description" ></textarea>
     </div>
 
     <div class="fom-group">
@@ -28,10 +28,10 @@
     </div>
     <div style="float: right;">
       <div class="row">
-        <div class="col-md-6"> <button type="submit" class="btn btn-primary">Ajouter</button></div>
-        <div class="col-md-6"> <button type="button" class="btn btn-secondary" (click) = "cancel()">Annuler</button></div>
+        <div class="col-md-6"> <button type="submit" class="btn btn-primary">{{btnName}}</button></div>
+        <div class="col-md-6"> <button type="button" class="btn btn-secondary" (click)="cancel()">Annuler</button></div>
       </div>
-
+      <br>
     </div>
 
 

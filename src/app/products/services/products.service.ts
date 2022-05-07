@@ -18,6 +18,21 @@ export class ProductsService {
 
   public addProduct(p: Product): Observable<any> {
     return this.http.post(`${this.urlApi}/products`, p);
+  }
+
+  public getProduct(id: string) {
+    return this.http.get<Product>(`${this.urlApi}/products/${id}`)
+  }
+
+  public updateProduct(p: Product) {
+    console.log('produit', p);
+    //const product = {... p}
+
+    return this.http.put(`${this.urlApi}/products/${p.id}`, p)
+  }
+
+  public deleteProduct(id: string) {
+    return this.http.delete(`${this.urlApi}/products/${id}`);
 
   }
 }

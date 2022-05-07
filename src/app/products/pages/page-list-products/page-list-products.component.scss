@@ -1,5 +1,9 @@
 .example-card {
-  margin-top: 12px;
+  margin-top: 12px !important;
+}
+
+.productDesactived {
+  background: #c4c4c4 !important;
 }
 
 .addBtn {
@@ -11,4 +15,24 @@
 .addBtn:hover {
   background: greenyellow;
   color: black;
+}
+
+.editBtn {
+  background-color: none;
+  border: none;
+  color: grey;
+  float: right;
+}
+.editBtn:hover {
+  background: none !important;
+  border: none !important;
+}
+
+.deleteBtn {
+  background: none;
+  color: red;
+  float: right;
+}
+
+.deleteBtn:hover {
 }

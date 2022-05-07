@@ -7,9 +7,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PageAddProductComponent } from './pages/page-add-product/page-add-product.component';
 import { ProductRoutingModule } from './product-routing.module';
 import { RouterModule } from '@angular/router';
+import { PageEditProductComponent } from './pages/page-edit-product/page-edit-product.component';
+import { SharedModule } from '../shared/shared.module';
 
 
-const declarations = [PageListProductsComponent, FormProductComponent, PageAddProductComponent]
+const declarations = [PageListProductsComponent, FormProductComponent, PageAddProductComponent, PageEditProductComponent]
 @NgModule({
   declarations,
   imports: [
@@ -17,7 +19,8 @@ const declarations = [PageListProductsComponent, FormProductComponent, PageAddPr
     AngularMaterialModule,
     ReactiveFormsModule,
     ProductRoutingModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   exports: declarations,
 })

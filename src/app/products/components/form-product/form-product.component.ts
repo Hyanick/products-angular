@@ -13,8 +13,10 @@ export class FormProductComponent implements OnInit {
 
   public form!: FormGroup;
   @Input() init = new Product();
+  @Input() isPageEdit = false;
   public category = Category;
   @Output() data: EventEmitter<any> = new EventEmitter();
+  public btnName: string = 'Ajouter';
 
   constructor(
     private fb: FormBuilder,
@@ -24,13 +26,17 @@ export class FormProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.createForm();
+    if (this.isPageEdit) {
+      this.btnName = 'Modifier'
+    }
   }
 
   private createForm() {
     this.form = this.fb.group({
+      id: [this.init.id],
       name: [this.init.name],
       category: [this.init.category],
-      price: [this.init.description],
+      price: [this.init.price],
       description: [this.init.description],
       activated: [this.init.activated]
     })
@@ -38,12 +44,15 @@ export class FormProductComponent implements OnInit {
 
   onSubmit() {
     this.data.emit(this.form.value);
-    this.router.navigate(['../'], { relativeTo: this.aRoute });
-    console.log(this.form.value);
   }
 
   cancel() {
-    this.router.navigate(['../'], { relativeTo: this.aRoute });
+    if (this.isPageEdit) {
+      this.router.navigate(['../../'], { relativeTo: this.aRoute });
+    } else {
+      this.router.navigate(['../'], { relativeTo: this.aRoute });
+    }
+
   }
 
 }

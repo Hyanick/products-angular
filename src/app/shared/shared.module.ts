@@ -5,9 +5,10 @@ import { ProfilComponent } from './commun_components/profil/profil.component';
 import { BasketComponent } from './commun_components/basket/basket.component';
 import { AngularMaterialModule } from '../angular-material.module';
 import { RouterModule } from '@angular/router';
+import { ConfirmPopinComponent } from './commun_components/confirm-popin/confirm-popin.component';
 
 
-const declarations = [LayoutComponent, ProfilComponent, BasketComponent]
+const declarations = [LayoutComponent, ProfilComponent, BasketComponent, ConfirmPopinComponent]
 @NgModule({
   declarations,
   imports: [
@@ -15,6 +16,7 @@ const declarations = [LayoutComponent, ProfilComponent, BasketComponent]
     AngularMaterialModule,
     RouterModule
   ],
-  exports: declarations
+  exports: declarations,
+  entryComponents: [ConfirmPopinComponent]
 })
 export class SharedModule { }
